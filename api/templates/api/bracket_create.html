@@ -1,29 +1,42 @@
 {% extends "api/base.html" %}
+{% load staticfiles %}
 
 {% block content %}
 
-<p>Create a New Bracket</p>
-<div id="new_competitor" class="control-group inlineForm">
+<p class="instructions"></p>
+<div id="new_competitor" class="bracket-create-form">
 <form action="" method="post">
     {% csrf_token %}
-    Title: <input type="text" class="bracket-title" name="Title" maxlength="36" size="12"/> <br/>
-
+    <input type="text" class="bracket-title" name="Title" maxlength="36" size="17" placeholder="Bracket Title"/> <br/>
+    <br/>
     <div id="competitors">
-        Player 1<br>
-        <input type="text" class="competitor-input" name="Competitor1" size="12" autocomplete="off" /><input type="button" id="add_competitor()" onClick="addCompetitor()" value="+" />
+      <div class="new_competitor">
+        <i id="trash" class="fa fa-fw fa-2x"></i><i id="trash" class="fa fa-fw fa-2x"></i><input type="text" class="comp_name" name="Competitor1" size="12" autocomplete="off" placeholder="Name"/><input type="text" class="comp_email" name="Competitor_email1" size="12" autocomplete="off" placeholder="Email"/><input type="text" class="comp_phone detectTab" name="Competitor_phone1" size="12" autocomplete="off" placeholder="Phone"/><div class="divider"></div><i id="trash" class="fa fa-fw fa-2x"></i>
+      </div>
     </div>
-    <p>
-        <input type="submit" />
-    </p>
+    <p><input type="button" id="add_competitor()" onClick="addCompetitor()" value="Add Competitor" /></p>
+    <br/>
+    <p><input type="submit" class="bracket_submit_button" /></p>
 </form>
 </div>
+<script src="//code.jquery.com/jquery-1.11.3.min.js"></script>
+<script>
+    $(document).on('keydown', 'input.detectTab', function(e) {
+    var keyCode = e.keyCode || e.which;
+    if (keyCode == 9) {
+      addCompetitor();
+    }
+  });
+</script>
+
 <script type="text/javascript">
+
 var i = 1;
 function addCompetitor() {
-    console.log('here');
     i++;
     var div = document.createElement('div');
-    div.innerHTML = 'Player'+i+'<br><input type="text" class="competitor-input" name="Competitor"'+i+' size="12" autocomplete="off" /><input type="button" id="add_competitor()" onClick="addCompetitor()" value="+" /><input type="button" value="-" onClick="removeCompetitor(this)">';
+    div.className = "new_competitor"
+    div.innerHTML = '<i id="trash" class="fa fa-fw fa-2x"></i><i id="trash" class="fa fa-fw fa-2x"></i><input type="text" class="comp_name" name="Competitor'+i+'" size="12" autocomplete="off" placeholder="Name"/><input type="text" class="comp_email" name="Competitor_email'+i+'" size="12" autocomplete="off" placeholder="Email"/><input type="text" class="comp_phone detectTab" name="Competitor_phone'+i+'" size="12" autocomplete="off" placeholder="Phone"/><div class="divider"></div><i id="trash" class="fa fa-fw fa-trash-o fa-2x" onClick="removeCompetitor(this)"></i>';
     document.getElementById('competitors').appendChild(div);
 }
 
@@ -33,4 +46,8 @@ function removeCompetitor(div) {
 }
 </script>
 
+{% endblock %}
+
+{% block scripts %}
+<script src="{% static 'create-bracket-form-jquery.js' %}"></script>
 {% endblock %}

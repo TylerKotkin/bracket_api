@@ -1,47 +1,184 @@
-#center {
-    display: table;
-    margin: auto;
+body {
+  background-color: #eee;
 }
 
-#graph {
-    width: 70%;
-    margin-left: auto;
-    margin-right: auto;
-   }
+#bracket_container {
+  width: 95%;
+}
+
+#chat_div {
+  width: 30%;
+  float: right;
+  margin-right: 2em;
+  background-color: #eee;
+  border-radius: 5px;
+  border: 5px solid $light-gray;
+}
+
+#messages_title {
+  text-align: center;
+  font-family: 'Lato', sans-serif;
+  font-size: 1.2em;
+  padding-top: 1em;
+  // width: 30%;
+  // float: right;
+}
+
+#chat_submit {
+  float: right;
+  padding-right: 1em;
+  // padding-right: 20%;
+  // padding-top: 5%;
+  // position: relative;
+}
+
+#chat_input {
+  float: left;
+  // padding-right: 2em;
+  // padding-right: 20%;
+  // padding-top: 5%;
+  // position: relative;
+}
+
+.scroll_box{
+    overflow:auto;
+    height: 500px;
+}
+
+td {
+  border: 5px solid #eee;
+  padding: 0.5rem;
+  border-radius: 15px;
+}
+
+table {
+  border-spacing: 3rem;
+}
+
+td:nth-child(1) {
+  width: 10%;
+  // background: #C4C4C4;
+  background: #244672;
+  color: #FEFEFE;
+
+ }
+td:nth-child(2) { background: #FFFFFF;
+  font-weight: lighter;
+  color: black;
+}
+
+
+#chat_table {
+  // width: 30%;
+  table-layout: auto;
+}
+
+// #chat_user {
+//     column-length: 10px;
+// }
+
+#bold {
+  font-weight: 900;
+  font-size: 1.2em;
+}
+
+g {
+  margin-right: auto;
+  margin-left: auto;
+  overflow: auto;
+}
+
+label {
+  display: block;
+}
+
+svg {
+  overflow: auto;
+  float:right;
+}
+
+.svg-container {
+    background-color: #eee;
+    display: flex;
+    position: relative;
+    width: 65%;
+    float:left;
+    padding-bottom: 65%; /* aspect ratio */
+    vertical-align: top;
+    overflow: auto;
+}
+.svg-content-responsive {
+    display: flex;
+    position: absolute;
+    top: 0px;
+    left: 0;
+}
+
+#chartId{
+  padding-left: 5em;
+}
+
+
+#center_title {
+  text-align: center;
+  font-color: $dark-gray;
+  padding-top: 2em;
+  font-family: 'Lato', sans-serif;
+  font-size: 2em;
+  margin: 0px;
+  h3 {
+    margin-top: .5em;
+    margin-bottom: .5em;
+  }
+}
+
+
+
+#messages {
+  font-family: 'Lato', sans-serif;
+}
+
 
 .node circle {
-  fill: #000;
+  fill: $white;
+  cursor: pointer;
 }
 
+.node rect {
+  stroke: $light-gray;
+    stroke-width: 3;
+  cursor: pointer;
+  fill: $white;
+ }
 
-.node {
- cursor: pointer;
+.node image {
+  cursor: pointer;
 }
 
-.node text { font-family: 'Graduate', serif;
+.node text {
+  font-family: 'Lato', sans-serif;
   color: $black;
-  font-size: 20px; }
+  font-size: 16px;
+  font-weight: lighter;
+  cursor: pointer;
+  text-align: right;
+
+}
 
 
 .link {
   fill: none;
-  stroke: #ccc;
-  stroke-width: 4px;
+  stroke: $light-gray;
+  stroke-width: 3;
 }
+
 .hyper {
-  font-family: 'Graduate', serif;
-    color: $black;
+    color: $white;
     font-size: 20px;
     font-weight: bold;
 }
 .hyper:hover {
-  font-family: 'Graduate', serif;
     color: $black;
     /*text-decoration: underline;*/
-    font-size: 26px;
-    font-weight: bolder;
-}
-
-.node {
- cursor: pointer;
+    font-size: base-font-size;
 }

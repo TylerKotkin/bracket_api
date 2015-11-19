@@ -1,26 +1,51 @@
 
 .container{
-  text-align:center;
+  padding-top: 4em;
+  text-align: center;
   margin:auto;
 
+  h1, p, input, label, {
+    font-family: 'Lato', sans-serif;
+
+  }
+
+  .all-the-buttons {
+    padding-top: 30em;
+    text-align: center;
+    position: relative;
+    overflow: visible;
+    z-index: 3;
+    border-color: $california;
+    border-width: thick;
+
+  }
+
+}
+.logo-color {
+  padding: 0;
+  color: $california;
 }
 
-.filter-box{
-  padding: 10px;
-  width: 100%;
+.logo, h4{
+  font-family: 'Graduate';
+  font-size: 2em;
 }
 
-.filter {
-  width: 33%;
-  box-sizing: border-box;
+.nav-btn {
+  padding: 0;
+  font-size: 1.2em;
+
 }
 
-.search-box {
-  padding: 10px;
-  width: 100%;
+.all-the-buttons {
+  padding-top: 30em;
+  text-align: center;
+  position: relative;
+  overflow: visible;
+  z-index: 3;
 }
 
-.search-brackets {
-  width: 100%;
-  box-sizing: border-box;
-}
+
+// .divider {
+//
+// }
