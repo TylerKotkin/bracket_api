@@ -122,7 +122,7 @@ USE_TZ = True
 
 
 # Parse database configuration from $DATABASE_URL
-# ******comment out for local*******
+# ******
 
 DATABASES['default'] = dj_database_url.config()
 
